@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survai - Revolutionizing Data Analysis</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="gradient-overlay"></div>
+    <canvas id="networkCanvas"></canvas>
+    <header>
+        <nav class="navbar">
+            <a href="/" class="logo">
+                <span class="logo-text">SurvAI</span>
+                <div class="logo-dot"></div>
+            </a>
+            <div class="nav-links">
+                <a href="#" class="nav-item">Home</a>
+                <a href="#features" class="nav-item">Features</a>
+                <a href="#waitlist" class="nav-item contact-btn">Contact Us</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <div class="ai-orb"></div>
+                <h1 class="hero-title">
+                    <span class="gradient-text">Smarter Surveys.</span><br>
+                    <span class="gradient-text">Faster Insights.</span>
+                </h1>
+                <p class="hero-subtitle">Empower your research with AI that delivers clarity and actionable insights faster than ever—so you can focus on making smarter recommendations for your clients.</p>
+                <div class="hero-cta">
+                    <a href="#waitlist" class="cta-button">Get Started</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="feature-section">
+            <div class="container">
+                <div class="feature-grid">
+                    <div class="feature-image">
+                        <img src="images/research-copilot.jpg" alt="Team analyzing data together using Survai's research copilot" loading="lazy">
+                    </div>
+                    <div class="feature-content">
+                        <h2 class="feature-title">Your Research Copilot</h2>
+                        <p class="feature-text">Survai slots seamlessly into your workflow, taking care of the heavy lifting—so you can launch surveys faster and deliver more-informed recommendations with immediate, AI-powered insights.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="feature-section feature-section-alt">
+            <div class="container">
+                <div class="feature-grid">
+                    <div class="feature-content">
+                        <h2 class="feature-title">Flexible and Intuitive</h2>
+                        <p class="feature-text">Survai offers the flexibility to tailor every survey to your unique needs while remaining simple enough for anyone to use. No complex setups, no steep learning curve—just smarter tools that work the way you do.</p>
+                    </div>
+                    <div class="feature-image">
+                        <img src="images/flexible-intuitive.jpg" alt="Team collaborating using Survai's intuitive interface" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="process-section">
+            <div class="process-container">
+                <h2 class="process-title">Accelerate Your Survey Process</h2>
+                <div class="process-flow">
+                    <div class="process-step streamlined">
+                        <div class="step-content">
+                            <div class="step-icon">
+                                <i class="fas fa-pen-to-square"></i>
+                            </div>
+                            <h3 class="step-title">Authoring & Programming</h3>
+                            <p class="step-description">Start smarter with customizable AI-generated survey drafts. Survai then automates complex branching, eliminating manual setup hassles.</p>
+                        </div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-content">
+                            <div class="step-icon">
+                                <i class="fas fa-paper-plane"></i>
+                            </div>
+                            <h3 class="step-title">Sourcing & Fielding</h3>
+                            <p class="step-description">Share surveys effortlessly with link-friendly formats across email, social media, or your preferred platforms.</p>
+                        </div>
+                        <div class="connector-line"></div>
+                    </div>
+                    <div class="process-step streamlined">
+                        <div class="step-content">
+                            <div class="step-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <h3 class="step-title">Analyzing & Understanding</h3>
+                            <p class="step-description">Go beyond dashboards with Survai's automated analysis tools. Transform raw data into clear trends and key insights, helping you focus on what matters.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <section class="features-grid-section" id="features">
+        <div class="container">
+            <div class="features-section-title">
+                <h2>All the Features You Need</h2>
+                <p>Everything you need to create, manage, and analyze surveys</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-card-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3 class="feature-card-title">AI-Powered Automation</h3>
+                    <p class="feature-card-description">Save time and streamline your workflow with AI that handles survey drafts, automates logic, and analyzes responses to uncover actionable insights.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-card-icon">
+                        <i class="fas fa-list-check"></i>
+                    </div>
+                    <h3 class="feature-card-title">Comprehensive Question Types</h3>
+                    <p class="feature-card-description">Create versatile surveys with a variety of question types, including multiple choice, matrix, open-text, sliders, and rankings—perfect for any project.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-card-icon">
+                        <i class="fas fa-diagram-project"></i>
+                    </div>
+                    <h3 class="feature-card-title">Smart Survey Logic</h3>
+                    <p class="feature-card-description">Built-in skip patterns and branching logic ensure your surveys flow naturally, delivering a smooth experience that keeps respondents engaged.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-card-icon">
+                        <i class="fas fa-magnifying-glass-chart"></i>
+                    </div>
+                    <h3 class="feature-card-title">AI-Enhanced Probing</h3>
+                    <p class="feature-card-description">Our AI automatically identifies opportunities to dig deeper, generating follow-up questions that reveal richer insights from your respondents.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-card-icon">
+                        <i class="fas fa-puzzle-piece"></i>
+                    </div>
+                    <h3 class="feature-card-title">Integrations <span class="coming-soon-badge">Coming Soon</span></h3>
+                    <p class="feature-card-description">Expand Survai's capabilities with integrations into your favorite tools, enabling a smoother workflow from data collection to analysis.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="waitlist-section" id="waitlist">
+        <div class="waitlist-container">
+            <h2 class="waitlist-title">Get Early Access to SurvAI</h2>
+            <p class="waitlist-subtitle">Join our waitlist to be among the first to experience the future of surveys. We're currently working with a select group of early adopters to refine our platform.</p>
+            
+            <form class="waitlist-form">
+                <input type="email" class="waitlist-input" placeholder="Enter your email address" required>
+                <button type="submit" class="waitlist-button">Join Waitlist</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-bottom">
+            <p>&copy; 2024 SurvAI. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="network.js"></script>
+    <script src="scripts.js"></script>
+</body>
+</html>
