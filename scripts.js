@@ -166,5 +166,41 @@ navLinks.forEach(link => {
     });
 });
 
+// Waitlist Form Handling
+const waitlistForm = document.getElementById('waitlistForm');
+const waitlistEmail = document.getElementById('waitlistEmail');
+
+waitlistForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    
+    const formData = new FormData();
+    formData.append('entry.1234567890', waitlistEmail.value);
+
+    try {
+        const response = await fetch('https://docs.google.com/forms/d/1fiIW44_fYHIxlX3Vb1R2q4Me0Q0ZaEq-aHMG1jthFO8/formResponse', {
+            method: 'POST',
+            mode: 'no-cors',
+            body: formData
+        });
+
+        // Clear the form
+        waitlistEmail.value = '';
+        
+        // Show success message
+        const successMessage = document.createElement('div');
+        successMessage.className = 'success-message';
+        successMessage.textContent = 'Thanks for joining! We\'ll be in touch soon.';
+        waitlistForm.appendChild(successMessage);
+        
+        // Remove success message after 3 seconds
+        setTimeout(() => {
+            successMessage.remove();
+        }, 3000);
+
+    } catch (error) {
+        console.error('Error:', error);
+    }
+});
+
 // Initialize when DOM is loaded
 document.addEventListener('DOMContentLoaded', initNeuralNetwork);
