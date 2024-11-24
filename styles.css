@@ -235,6 +235,104 @@ header {
     opacity: 0.9;
 }
 
+/* Mobile Menu Styles */
+.mobile-menu-button {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    z-index: 1000;
+}
+
+.menu-icon {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background-color: var(--primary-text);
+    position: relative;
+    transition: background-color 0.3s;
+}
+
+.menu-icon::before,
+.menu-icon::after {
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 2px;
+    background-color: var(--primary-text);
+    transition: transform 0.3s;
+}
+
+.menu-icon::before {
+    top: -6px;
+}
+
+.menu-icon::after {
+    bottom: -6px;
+}
+
+/* Mobile Menu Open State */
+.mobile-menu-open .menu-icon {
+    background-color: transparent;
+}
+
+.mobile-menu-open .menu-icon::before {
+    transform: rotate(45deg);
+    top: 0;
+}
+
+.mobile-menu-open .menu-icon::after {
+    transform: rotate(-45deg);
+    bottom: 0;
+}
+
+@media (max-width: 768px) {
+    .mobile-menu-button {
+        display: block;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        height: 100vh;
+        background: var(--primary-bg);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        transition: right 0.3s ease;
+        z-index: 999;
+    }
+
+    .mobile-menu-open .nav-links {
+        right: 0;
+    }
+
+    .nav-item {
+        font-size: 1.5rem;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .mobile-menu-open .nav-item {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .mobile-menu-open .nav-item:nth-child(1) { transition-delay: 0.1s; }
+    .mobile-menu-open .nav-item:nth-child(2) { transition-delay: 0.2s; }
+    .mobile-menu-open .nav-item:nth-child(3) { transition-delay: 0.3s; }
+
+    .navbar {
+        justify-content: space-between;
+        padding: 1rem;
+    }
+}
+
 /* Hero Section */
 .hero {
     position: relative;
@@ -1070,4 +1168,128 @@ footer {
 .features-section-title {
     text-align: center;
     margin-bottom: 2rem;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+    /* Navigation */
+    .navbar {
+        padding: 1rem;
+    }
+
+    .nav-links {
+        gap: 1.5rem;
+    }
+
+    .nav-item {
+        font-size: 1rem;
+    }
+
+    /* Hero Section */
+    .hero-content {
+        padding: 2rem 1rem;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+        line-height: 1.2;
+    }
+
+    .hero-subtitle {
+        font-size: 1.1rem;
+        margin: 1rem 0;
+    }
+
+    /* Features Grid */
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    .features-section-title h2 {
+        font-size: 2rem;
+        padding: 0 1rem;
+    }
+
+    .feature-card {
+        padding: 1.5rem;
+    }
+
+    .feature-card-title {
+        font-size: 1.25rem;
+    }
+
+    .feature-card-description {
+        font-size: 0.95rem;
+    }
+
+    /* Waitlist Section */
+    .waitlist-section {
+        padding: 3rem 1rem;
+    }
+
+    .waitlist-title {
+        font-size: 2rem;
+    }
+
+    .waitlist-form {
+        flex-direction: column;
+        gap: 1rem;
+        width: 100%;
+        padding: 0 1rem;
+    }
+
+    .waitlist-input {
+        width: 100%;
+        margin: 0;
+    }
+
+    .waitlist-button {
+        width: 100%;
+        margin: 0;
+    }
+}
+
+/* Small Mobile Devices */
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .feature-card {
+        margin: 0 1rem;
+    }
+
+    .nav-links {
+        gap: 1rem;
+    }
+}
+
+/* Tablet Devices */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+        padding: 1.5rem;
+    }
+
+    .hero-title {
+        font-size: 3rem;
+    }
+}
+
+/* Ensure smooth transitions between breakpoints */
+@media (orientation: landscape) and (max-height: 600px) {
+    .hero-content {
+        padding: 1rem;
+    }
+
+    .hero-title {
+        font-size: 2rem;
+    }
 }

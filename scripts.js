@@ -122,5 +122,25 @@ function initNeuralNetwork() {
     animate();
 }
 
+// Mobile Menu Toggle
+const mobileMenuButton = document.querySelector('.mobile-menu-button');
+const navbar = document.querySelector('.navbar');
+const navLinks = document.querySelectorAll('.nav-links a');
+
+function toggleMenu() {
+    navbar.classList.toggle('mobile-menu-open');
+    document.body.style.overflow = navbar.classList.contains('mobile-menu-open') ? 'hidden' : '';
+}
+
+mobileMenuButton.addEventListener('click', toggleMenu);
+
+// Close menu when clicking nav links
+navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        navbar.classList.remove('mobile-menu-open');
+        document.body.style.overflow = '';
+    });
+});
+
 // Initialize when DOM is loaded
 document.addEventListener('DOMContentLoaded', initNeuralNetwork);
