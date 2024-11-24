@@ -122,6 +122,30 @@ function initNeuralNetwork() {
     animate();
 }
 
+// Header scroll behavior
+let lastScroll = 0;
+const header = document.querySelector('header');
+const scrollThreshold = 50;
+
+window.addEventListener('scroll', () => {
+    const currentScroll = window.pageYOffset;
+    
+    if (currentScroll <= 0) {
+        header.classList.remove('header-hidden');
+        return;
+    }
+    
+    if (currentScroll > lastScroll && currentScroll > scrollThreshold) {
+        // Scrolling down & past threshold
+        header.classList.add('header-hidden');
+    } else if (currentScroll < lastScroll) {
+        // Scrolling up
+        header.classList.remove('header-hidden');
+    }
+    
+    lastScroll = currentScroll;
+});
+
 // Mobile Menu Toggle
 const mobileMenuButton = document.querySelector('.mobile-menu-button');
 const navbar = document.querySelector('.navbar');

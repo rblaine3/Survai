@@ -155,14 +155,15 @@ header, main, section, footer {
 
 /* Header Styles */
 header {
-    background: rgba(10, 10, 31, 0.8);
-    backdrop-filter: blur(10px);
-    padding: 1rem 0;
     position: fixed;
     width: 100%;
     top: 0;
+    transition: transform 0.3s ease;
     z-index: 1000;
-    border-bottom: 1px solid var(--glass-effect);
+}
+
+.header-hidden {
+    transform: translateY(-100%);
 }
 
 .navbar {
@@ -292,6 +293,17 @@ header {
         display: block;
     }
 
+    .navbar {
+        padding: 0.75rem 1rem;
+        height: 60px;
+        align-items: center;
+    }
+
+    .logo {
+        font-size: 1.5rem;
+        padding: 0;
+    }
+
     .nav-links {
         position: fixed;
         top: 0;
@@ -330,6 +342,30 @@ header {
     .navbar {
         justify-content: space-between;
         padding: 1rem;
+    }
+
+    /* Feature cards full width */
+    .features-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    .feature-card {
+        width: calc(100% - 2rem);
+        margin: 0 1rem;
+        padding: 1.5rem;
+    }
+
+    /* Adjust body padding for fixed header */
+    body {
+        padding-top: 60px;
+    }
+
+    /* Ensure proper spacing in hero section */
+    .hero-content {
+        padding-top: 1rem;
     }
 }
 
